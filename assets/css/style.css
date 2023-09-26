@@ -1,0 +1,422 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+li,
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+li,
+a,
+fieldset input,
+input {
+  color: inherit;
+}
+
+
+body {
+  background-color: rgba(0, 0, 0);
+  background-image: url(https://i.ibb.co/H2JWgk9/starsss.png);
+  background-size: 150vw;
+  color: white;
+  text-align: center;
+}
+
+body * {
+  font-family: 'Martian Mono', sans-serif;
+}
+
+/* layout */
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.highlight img,
+.highlight section,
+fieldset span,
+fieldset i,
+fieldset input {
+  flex: 1;
+}
+
+.highlight,
+.highlight-inner,
+.checkout form {
+  flex-direction: column;
+}
+
+/* dimensions */
+
+.welcome,
+main h1 {
+  height: 100vh;
+}
+
+/* font sizes */
+
+h1 {
+  font-size: 10rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 4rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+main p,
+.highlight-inner,
+.highlight img,
+.checkout,
+footer {
+  padding: 5vh;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* header ==================================*/
+
+
+
+/* "welcome" section 
+.welcome ===================================*/
+
+.welcome {
+  background-image: url(https://i.ibb.co/6bTz6hL/bestmoon.png);
+  background-attachment: fixed;
+  background-size: 125vw;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.welcome h2 {
+  text-shadow: 2px 2px black;
+  padding: 70vh 2vw 0 2vw;
+}
+
+/* main ========================================*/
+
+main {
+  padding-top: 30vh;
+}
+
+main h1 {
+  text-shadow: 2px 2px black;
+  padding: 0 2vh;
+}
+
+main span {
+  color: rgb(212, 173, 252);
+  filter: drop-shadow(0.1rem 0.1rem 1rem rgb(212, 173, 252));
+}
+
+main p {
+  margin: 30vh 10vw 75vh 10vw;
+  vertical-align: center;
+  background: rgba(212, 173, 252, 0.9);
+}
+
+.opener-1 {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.opener-2 {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+/* "highlight" section 
+.highlight ===================================*/
+
+.highlight {
+  align-items: space-evenly;
+  margin: 5%;
+}
+
+.highlight p {
+  font-size: 1.5rem;
+  padding-top: 2vh;
+}
+
+.highlight img,
+.highlight section {
+  margin: 0 5%;
+}
+
+.highlight img {
+  width: 20vw;
+}
+
+#fullimg {
+  width: 30vw;
+}
+
+.highlight-inner {
+  justify-content: center;
+}
+
+.highlight>section {
+  margin-bottom: 60vh;
+  background-color: rgba(92, 70, 156, 0.6);
+}
+
+.highlight-2 {
+  flex-direction: row-reverse;
+}
+
+/* "checkout" section 
+.checkout =================================*/
+
+.checkout {
+  margin: 0 10vw;
+}
+
+.checkout p {
+  padding-top: 2vh;
+}
+
+.checkout {
+  background: rgba(29, 38, 125, 0.8);
+}
+
+/* "checkout" form =========================*/
+
+.checkout form,
+.checkout form * {
+  padding: 2vh;
+}
+
+fieldset {
+  margin: 0 5%;
+  align-items: center;
+}
+
+fieldset span,
+fieldset i,
+fieldset input {
+  align-content: center;
+}
+
+fieldset span,
+fieldset input {
+  font-size: 2rem;
+}
+
+fieldset span,
+fieldset input,
+#submit {
+  background: rgb(29, 38, 125);
+}
+
+fieldset span {
+  border: 1px solid white;
+}
+
+fieldset i {
+  font-size: 3vw;
+}
+
+fieldset input,
+#submit {
+  border: none;
+  box-shadow: 1vh 1vh rgb(12, 19, 79);
+}
+
+fieldset input:hover,
+#submit:hover {
+  background: rgba(29, 38, 125, 0.5);
+  transition: 0.1s ease-in;
+}
+
+@keyframes buttonPress {
+  0% {
+    transform: scale(1);
+    box-shadow: rgb(12, 19, 79);
+  }
+
+  25% {
+    transform: scale(0.9);
+    box-shadow: rgb(51, 54, 84);
+  }
+
+  50% {
+    transform: scale(0.90);
+    box-shadow: none;
+  }
+
+  75% {
+    transform: scale(0.9);
+    box-shadow: rgb(51, 54, 84);
+  }
+
+  0% {
+    transform: scale(1);
+    box-shadow: rgb(12, 19, 79);
+  }
+}
+
+fieldset input:active,
+#submit:active {
+  animation: buttonPress 0.6s linear;
+}
+
+#submit {
+  margin-top: 2vw;
+  padding: 2vh;
+}
+
+
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+
+@media all and (max-width: 900px) {
+  .grid {
+    display: block;
+  }
+
+  .highlight-inner h3 {
+    font-size: 2.5rem;
+    line-height: 1.5;
+  }
+
+  .highlight-inner p {
+    font-size: 1.3rem;
+  }
+
+  footer {
+    padding: 5vh 1vh;
+  }
+
+  footer * {
+    font-size: 0.8rem;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+}
+
+@media all and (max-width: 730px) {
+
+  .highlight>section {
+    flex-direction: column-reverse;
+  }
+
+  .highlight img {
+    background: none;
+    width: 50vw;
+  }
+
+    #fullimg {
+    width: 70vw;
+  }
+
+  .checkout h3 {
+    font-size: 3rem;
+    padding: 0 1vw;
+  }
+
+}
+
+@media all and (max-width: 600px) {
+
+  .welcome h2 {
+    font-size: 3.25rem;
+  }
+
+  main h1 {
+    font-size: 7rem;
+  }
+
+  .highlight-inner h3 {
+    font-size: 2rem;
+  }
+
+  .checkout h3 {
+    font-size: 1.6rem;
+  }
+
+  .checkout p {
+    font-size: 1.4rem;
+  }
+
+  .checkout fieldset {
+    padding: 0;
+  }
+}
+
+@media all and (max-width: 450px) {
+
+  .welcome h2 {
+    font-size: 3rem;
+  }
+
+  main h1 {
+    font-size: 5rem;
+  }
+
+  .highlight h3 {
+    font-size: 1.4rem;
+  }
+
+  .highlight p {
+    font-size: 1.2rem;
+  }
+
+  .highlight span {
+    display: none;
+  }
+
+  .checkout {
+    margin: 0;
+  }
+
+  fieldset {
+    margin: 2.5%;
+  }
+
+  .checkout span,
+  .checkout input {
+    font-size: 1.4rem;
+  }
+
+  .checkout i {
+    display: none;
+  }
+}
